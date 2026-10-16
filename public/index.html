@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+    <div class="dashboard">
+        <header class="dashboard-header">
+            <h1>📊 Analytics Dashboard</h1>
+            <p class="subtitle">Real-time business insights and performance metrics</p>
+        </header>
+
+        <!-- Filters Section -->
+        <div class="filters-section">
+            <div class="filter-group">
+                <label for="startDate">Start Date:</label>
+                <input type="date" id="startDate" class="date-input">
+            </div>
+            <div class="filter-group">
+                <label for="endDate">End Date:</label>
+                <input type="date" id="endDate" class="date-input">
+            </div>
+            <div class="filter-group">
+                <label for="categoryFilter">Category:</label>
+                <select id="categoryFilter" class="category-select">
+                    <option value="">All Categories</option>
+                    <option value="Electronics">Electronics</option>
+                    <option value="Clothing">Clothing</option>
+                    <option value="Food">Food</option>
+                    <option value="Books">Books</option>
+                    <option value="Home & Garden">Home & Garden</option>
+                </select>
+            </div>
+            <button id="applyFilters" class="apply-button">Apply Filters</button>
+            <button id="resetFilters" class="reset-button">Reset</button>
+        </div>
+
+        <!-- Stats Cards -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon">💰</div>
+                <div class="stat-content">
+                    <h3 class="stat-label">Total Revenue</h3>
+                    <p class="stat-value" id="totalRevenue">$0</p>
+                    <span class="stat-change" id="revenueChange">+0%</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">🛒</div>
+                <div class="stat-content">
+                    <h3 class="stat-label">Total Orders</h3>
+                    <p class="stat-value" id="totalOrders">0</p>
+                    <span class="stat-change" id="ordersChange">+0%</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">👥</div>
+                <div class="stat-content">
+                    <h3 class="stat-label">Customers</h3>
+                    <p class="stat-value" id="totalCustomers">0</p>
+                    <span class="stat-change positive">Active</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">📈</div>
+                <div class="stat-content">
+                    <h3 class="stat-label">Avg Order Value</h3>
+                    <p class="stat-value" id="avgOrderValue">$0</p>
+                    <span class="stat-change positive">Per order</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Charts Grid -->
+        <div class="charts-grid">
+            <!-- Line Chart - Revenue Over Time -->
+            <div class="chart-container">
+                <div class="chart-header">
+                    <h2>Revenue Over Time</h2>
+                    <span class="chart-subtitle">Daily revenue trends</span>
+                </div>
+                <canvas id="revenueChart"></canvas>
+            </div>
+
+            <!-- Bar Chart - Category Performance -->
+            <div class="chart-container">
+                <div class="chart-header">
+                    <h2>Sales by Category</h2>
+                    <span class="chart-subtitle">Category breakdown</span>
+                </div>
+                <canvas id="categoryChart"></canvas>
+            </div>
+
+            <!-- Doughnut Chart - Regional Distribution -->
+            <div class="chart-container">
+                <div class="chart-header">
+                    <h2>Regional Performance</h2>
+                    <span class="chart-subtitle">Revenue by region</span>
+                </div>
+                <canvas id="regionalChart"></canvas>
+            </div>
+
+            <!-- Bar Chart - Orders vs Customers -->
+            <div class="chart-container">
+                <div class="chart-header">
+                    <h2>Orders vs Customers</h2>
+                    <span class="chart-subtitle">Weekly comparison</span>
+                </div>
+                <canvas id="comparisonChart"></canvas>
+            </div>
+        </div>
+
+        <footer class="dashboard-footer">
+            <p>Last updated: <span id="lastUpdate">Never</span></p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
