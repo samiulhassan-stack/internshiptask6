@@ -1,8 +1,10 @@
 // Chart instances
 let revenueChart, categoryChart, regionalChart, comparisonChart;
 
-// API Base URL
-const API_URL = 'http://localhost:3000/api';
+// API Base URL - works for both local and production
+const API_URL = window.location.hostname === 'localhost' 
+    ? 'http://localhost:3000/api' 
+    : '/api';
 
 // Initialize dashboard
 document.addEventListener('DOMContentLoaded', () => {

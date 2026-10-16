@@ -28,6 +28,10 @@ A comprehensive, interactive dashboard with multiple chart types and real-time d
 - Touch-friendly filters on mobile
 - Optimized grid layouts for all screen sizes
 
+## 🌐 Live Demo
+
+🚀 **Deploy your own**: See [DEPLOYMENT.md](DEPLOYMENT.md) for step-by-step deployment guide
+
 ## Technology Stack 🛠️
 
 ### Backend
